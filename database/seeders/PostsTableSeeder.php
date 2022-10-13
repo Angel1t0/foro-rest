@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 
-class TopicsTableSeeder extends Seeder
+class PostsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,9 +18,11 @@ class TopicsTableSeeder extends Seeder
     {
         $faker = Faker::create();
         for($i=0; $i<10; $i++){
-            DB::table('topics')->insert([
-                'title' => $faker->sentence,
+            DB::table('posts')->insert([
+                'message' => $faker->sentence,
                 'user_id' => rand(1,11),
+                'topic_id' => rand(1,11),
+                'date' => $faker->date,
             ]);
         }
     }
