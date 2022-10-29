@@ -28,6 +28,7 @@ function resource($router, $url, $model){
 $router->group(['middleware'=>['auth']], function() use($router){
 resource($router, '/topics', 'Topic');
 resource($router, '/users', 'User');
+resource($router, '/posts', 'Post');
 });
 /*
 $router->get('/users', 'UserController@index');
